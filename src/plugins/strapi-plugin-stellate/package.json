@@ -1,12 +1,12 @@
 {
-  "name": "purge-stellate-cache",
+  "name": "strapi-plugin-stellate",
   "version": "0.0.0",
   "description": "This is the description of the plugin.",
   "strapi": {
-    "name": "purge-stellate-cache",
+    "name": "strapi-plugin-stellate",
     "description": "Description of Purge Stellate Cache plugin",
     "kind": "plugin",
-    "displayName": "Purge Stellate Cache"
+    "displayName": "Strapi Plugin Stellate"
   },
   "dependencies": {
     "@strapi/design-system": "^1.6.3",
