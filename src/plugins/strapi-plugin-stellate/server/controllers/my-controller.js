@@ -3,7 +3,7 @@
 module.exports = ({ strapi }) => ({
   index(ctx) {
     ctx.body = strapi
-      .plugin('purge-stellate-cache')
+      .plugin('strapi-plugin-stellate')
       .service('myService')
       .getWelcomeMessage();
   },
