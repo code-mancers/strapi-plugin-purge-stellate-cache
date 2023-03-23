@@ -1,7 +1,8 @@
 export const options = [
   "all",
-  "page",
-  "roomMedia",
-  "offer",
-  "hotel",
+  "demo1",
+  "demo2",
+  "demo3",
+  "demo4",
+  "demo5"
 ];

@@ -15,7 +15,7 @@ export const ClearCache = () => {
   const [error, toggleError] = useState(null);
 
   const handleClick = async () => {
-    console.log("Hello")
+    console.log("Cache Cleared Successfully");
   };
 
   const handleAlertClose = () => {
@@ -39,13 +39,13 @@ export const ClearCache = () => {
             <Option
               key={option}
               value={`purge ${option} cache`}
-            >{`purge ${option} cache`}</Option>
+            >{`Purge ${option} cache`}</Option>
           ))}
         </Select>
         <>
-          {showAlert && (
+          {showAlert ? (
             <Alert variant={variant} onAlertClose={handleAlertClose} />
-          )}
+          ) : null}
           {collection && (
             <Box
               padding={4}
