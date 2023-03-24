@@ -1,18 +1,22 @@
-/*
+/**
  *
  * HomePage
  *
  */
-
-import React from 'react';
-// import PropTypes from 'prop-types';
-import pluginId from '../../pluginId';
+import React from "react";
+import { Box } from "@strapi/design-system/Box";
+import { BaseHeaderLayout, ContentLayout } from "@strapi/design-system/Layout";
+import { ClearCache } from "../../components/ClearCache";
 
 const HomePage = () => {
   return (
     <div>
-      <h1>{pluginId}&apos;s HomePage</h1>
-      <p>Happy coding</p>
+      <BaseHeaderLayout title="Refresh Stellate cache" as="h2" />
+      <Box background="neutral100">
+        <ContentLayout>
+          <ClearCache />
+        </ContentLayout>
+      </Box>
     </div>
   );
 };
