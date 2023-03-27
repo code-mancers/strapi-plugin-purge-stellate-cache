@@ -1,7 +1,16 @@
-'use strict';
+"use strict";
 
-const myController = require('./my-controller');
+module.exports = ({ strapi }) => ({
+  async refreshcache(ctx) {
+    const response = await strapi
+      .plugin('strapi-plugin-stellate')
+      .service("cacheService")
+      .cacheService();
 
-module.exports = {
-  myController,
-};
+    if (response.error) {
+      return ctx.internalServerError(`Server error: ${response.error}`);
+    }
+
+    ctx.body = response;
+  },
+});
