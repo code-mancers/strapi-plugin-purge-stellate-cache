@@ -6,12 +6,12 @@ module.exports = ({ strapi }) => ({
     try {
       const data = await axios({
         url: process.env.STELLATE_URL,
-        method: "post",
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
           "stellate-token": process.env.STELLATE_TOKEN,
         },
-        data: { query: `mutation { _purgePost }` },
+        data: { query: `mutation { _purgeAll }` },
       });
 
       return data.data;
