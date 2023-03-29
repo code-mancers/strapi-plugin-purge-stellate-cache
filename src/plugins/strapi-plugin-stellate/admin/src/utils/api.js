@@ -10,3 +10,29 @@ export const refreshCache = async (type) => {
     return true;
   }
 };
+
+export const refreshAllCache = async () => {
+  try {
+    const data = await axios({
+      url: "/cache/refreshcache",
+      method: "post",
+    });
+
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const refreshCollectionCache = async (query) => {
+  try {
+    const data = await axios({
+      url: `/cache/refreshcollectioncache?collection=${query}`,
+      method: "post",
+    });
+
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};
