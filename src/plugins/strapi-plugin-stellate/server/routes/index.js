@@ -7,4 +7,12 @@ module.exports = [
       policies: [],
     },
   },
+  {
+    method: "POST",
+    path: "/cache/refreshcollectioncache",
+    handler: "cacheController.refreshcollectioncache",
+    config: {
+      policies: [],
+    },
+  },
 ];

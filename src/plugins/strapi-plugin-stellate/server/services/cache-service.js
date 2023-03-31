@@ -6,12 +6,32 @@ module.exports = ({ strapi }) => ({
     try {
       const data = await axios({
         url: process.env.STELLATE_URL,
-        method: "POST",
+        method: "post",
         headers: {
           "Content-Type": "application/json",
           "stellate-token": process.env.STELLATE_TOKEN,
         },
         data: { query: `mutation { _purgeAll }` },
+      });
+
+      return data.data;
+    } catch (error) {
+      console.error("Error while deploying -", error);
+      return {
+        error: `Error while deploying - ${error}`,
+      };
+    }
+  },
+  async refreshCollectionCache(query) {
+    try {
+      const data = await axios({
+        url: process.env.STELLATE_URL,
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+          "stellate-token": process.env.STELLATE_TOKEN,
+        },
+        data: { query: `mutation { purge${query} }` },
       });
 
       return data.data;

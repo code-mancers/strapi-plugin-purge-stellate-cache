@@ -14,7 +14,7 @@ export const refreshCache = async (type) => {
 export const refreshAllCache = async () => {
   try {
     const data = await axios({
-      url: "/clear-stellate-cache/cache/refreshcache",
+      url: "/cache/refreshcache",
       method: "post",
     });
 
