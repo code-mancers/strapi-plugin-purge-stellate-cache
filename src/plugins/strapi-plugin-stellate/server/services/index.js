@@ -1,7 +1,7 @@
 'use strict';
 
-const myService = require('./my-service');
+const cacheService = require('./cache-service.js');
 
 module.exports = {
-  myService,
+  cacheService,
 };

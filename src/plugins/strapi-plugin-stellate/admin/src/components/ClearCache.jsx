@@ -3,6 +3,7 @@ import { Box } from "@strapi/design-system/Box";
 import { Button } from "@strapi/design-system/Button";
 import { Stack } from "@strapi/design-system/Stack";
 import { Select, Option } from "@strapi/design-system/Select";
+import { refreshCache } from "../utils/api";
 
 import { options } from "../utils/options";
 import { Alert } from "./Alert";
@@ -15,7 +16,18 @@ export const ClearCache = () => {
   const [error, toggleError] = useState(null);
 
   const handleClick = async () => {
-    console.log("Cache Cleared Successfully");
+    const queryType = collection.split(" ")[1];
+    setLoading(true);
+    try {
+      await refreshCache(queryType);
+      setLoading(false);
+      setShowAlert(true);
+      setVariant("success");
+    } catch {
+      setLoading(false);
+      setShowAlert(true);
+      setVariant("danger");
+    }
   };
 
   const handleAlertClose = () => {

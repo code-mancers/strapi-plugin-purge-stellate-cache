@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
-const myController = require('./my-controller');
+const cacheController = require("./cache-controller");
 
 module.exports = {
-  myController,
+  cacheController,
 };
