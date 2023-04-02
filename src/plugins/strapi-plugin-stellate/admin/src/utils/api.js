@@ -14,8 +14,8 @@ export const refreshCache = async (type) => {
 export const refreshAllCache = async () => {
   try {
     const data = await axios({
-      url: "/cache/refreshcache",
-      method: "post",
+      url: "stellate/cache/refreshcache",
+      method: "POST",
     });
 
     return data;
@@ -27,8 +27,8 @@ export const refreshAllCache = async () => {
 export const refreshCollectionCache = async (query) => {
   try {
     const data = await axios({
-      url: `/cache/refreshcollectioncache?collection=${query}`,
-      method: "post",
+      url: `stellate/cache/refreshcollectioncache?collection=${query}`,
+      method: "POST",
     });
 
     return data;
